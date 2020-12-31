@@ -10,17 +10,17 @@ To use account linking you must also update the database if you use MySQL or SQL
 
 MySQL:
 
-* `ALTER TABLE simpleauth.simpleauth_players ADD linkedign VARCHAR(16);`
+* `ALTER TABLE Register.Register_players ADD linkedign VARCHAR(16);`
 
 SQLITE:
 
-* `ALTER TABLE simpleauth.simpleauth_players ADD linkedign TEXT;`
+* `ALTER TABLE Register.Register_players ADD linkedign TEXT;`
 
 
 Plugin for PocketMine-MP that prevents people from impersonating an account, requiring registration and login when connecting.
 
-	 SimpleAuth plugin for PocketMine-MP
-     Copyright (C) 2014 PocketMine Team <https://github.com/PocketMine/SimpleAuth>
+	 Register plugin for PocketMine-MP
+     Copyright (C) 2014 PocketMine Team <https://github.com/PocketMine/Register>
 
      This program is free software: you can redistribute it and/or modify
      it under the terms of the GNU Lesser General Public License as published by
@@ -35,9 +35,9 @@ Plugin for PocketMine-MP that prevents people from impersonating an account, req
 
 ## What's New?
 
-This version of SimpleAuth adds automatic account linking to SimpleAuth, and removes the obselete antihack protection.
+This version of Register adds automatic account linking to Register, and removes the obselete antihack protection.
 
-SimpleAuth2 is compatible with SimpleAuthHelper, and works with these providers: MySQL, YAML and SQLITE
+Register2 is compatible with SimpleAuthHelper, and works with these providers: MySQL, YAML and SQLITE
 
 ## Commands
 
@@ -48,11 +48,11 @@ SimpleAuth2 is compatible with SimpleAuthHelper, and works with these providers:
 * `/link <otherIGN> <otherpassword>`
 * `/unlink`
 * For Console: `/unlink <playerIGN>`
-* For OPs: `/simpleauth <command: help|unregister> [parameters...]` (TODO)
+* For OPs: `/Register <command: help|unregister> [parameters...]` (TODO)
 
 ## Configuration
 
-You can modify the _SimpleAuth/config.yml_ file on the _plugins_ directory once the plugin has been run at least once.
+You can modify the _Register/config.yml_ file on the _plugins_ directory once the plugin has been run at least once.
 
 | Configuration | Type | Default | Description |
 | :---: | :---: | :---: | :--- |
@@ -71,22 +71,22 @@ You can modify the _SimpleAuth/config.yml_ file on the _plugins_ directory once 
 
 | Permission | Default | Description |
 | :---: | :---: | :--- |
-| simpleauth.chat | false | Allows using the chat while not being authenticated |
-| simpleauth.move | false | Allows moving while not being authenticated |
-| simpleauth.lastip | true | Allows authenticating using the lastIP when enabled in the config |
-| simpleauth.command.register | true | Allows registering an account |
-| simpleauth.command.login | true | Allows logging into an account |
-| simpleauth.command.link | true | Allows linking an account |
-| simpleauth.command.unlink | true | Allows unlinking an account |
+| Register.chat | false | Allows using the chat while not being authenticated |
+| Register.move | false | Allows moving while not being authenticated |
+| Register.lastip | true | Allows authenticating using the lastIP when enabled in the config |
+| Register.command.register | true | Allows registering an account |
+| Register.command.login | true | Allows logging into an account |
+| Register.command.link | true | Allows linking an account |
+| Register.command.unlink | true | Allows unlinking an account |
 
 ## For developers
 
 ### Events
 
-* SimpleAuth\event\PlayerAuthenticateEvent
-* SimpleAuth\event\PlayerDeauthenticateEvent
-* SimpleAuth\event\PlayerRegisterEvent
-* SimpleAuth\event\PlayerUnregisterEvent
+* Register\event\PlayerAuthenticateEvent
+* Register\event\PlayerDeauthenticateEvent
+* Register\event\PlayerRegisterEvent
+* Register\event\PlayerUnregisterEvent
 
 ### Plugin API methods
 
@@ -98,12 +98,12 @@ All methods are available through the main plugin object
 * bool deauthenticatePlayer(pocketmine\Player $player)
 * bool registerPlayer(pocketmine\IPlayer $player, $password)
 * bool unregisterPlayer(pocketmine\IPlayer $player)
-* void setDataProvider(SimpleAuth\provider\DataProvider $provider)
-* SimpleAuth\provider\DataProvider getDataProvider(void)
+* void setDataProvider(Register\provider\DataProvider $provider)
+* Register\provider\DataProvider getDataProvider(void)
 
 ### Implementing your own DataProvider
 
-You can register an instantiated object that implements SimpleAuth\provider\DataProvider to the plugin using the _setDataProvider()_ method
+You can register an instantiated object that implements Register\provider\DataProvider to the plugin using the _setDataProvider()_ method
 
 
     
