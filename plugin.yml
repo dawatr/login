@@ -43,15 +43,15 @@ permissions:
     description: "Allows using Register commands"
     default: true
     children:
-     simpleauth.command.register:
+     Register.command.register:
       description: "Allows registering an account"
       default: true
-     simpleauth.command.login:
+     Register.command.login:
       description: "Allows logging into an account"
       default: true
-     simpleauth.command.link:
+     Register.command.link:
       description: "Allows linking to another account"
       default: true
-     simpleauth.command.unlink:
+     Register.command.unlink:
       description: "Allows unlinking an account"
       default: true
