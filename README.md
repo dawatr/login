@@ -2,7 +2,6 @@
 
 By @Shoghicp
 
-[![Poggit Release](https://poggit.pmmp.io/shield.approved/SimpleAuth)](https://poggit.pmmp.io/p/SimpleAuth)
 
 #### IMPORTANT
 You no longer need to set "hack login" and "hack register" perms with SimpleAuthHelper.
