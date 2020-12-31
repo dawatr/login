@@ -1,4 +1,4 @@
-# SimpleAuth 2.x
+# Register
 
 By @Shoghicp
 
