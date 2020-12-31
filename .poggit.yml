@@ -5,5 +5,5 @@ branches:
 - mergedmaster
 projects:
 Register    path: ""
-    icon: sa.png
+    icon: rg.png
 ...
