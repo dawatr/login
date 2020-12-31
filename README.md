@@ -50,36 +50,11 @@ Register2 is compatible with SimpleAuthHelper, and works with these providers: M
 * For Console: `/unlink <playerIGN>`
 * For OPs: `/Register <command: help|unregister> [parameters...]` (TODO)
 
-## Configuration
-
-You can modify the _Register/config.yml_ file on the _plugins_ directory once the plugin has been run at least once.
-
-| Configuration | Type | Default | Description |
-| :---: | :---: | :---: | :--- |
-| timeout | integer | 60 | Unauthenticated players will be kicked after this period of time. Set it to 0 to disable. (TODO) |
-| forceSingleSession | boolean | true | New players won't kick an authenticated player if using the same name. |
-| minPasswordLength | integer | 6 | Minimum length of the register password. |
-| blockAfterFail | integer | 6 | Block clients after several failed attempts |
-| authenticateByLastUniqueId | boolean | false | Enables authentication by last unique id. |
-| dataProvider | string | yaml | Selects the provider to get the data from (yaml, sqlite3, mysql, none) |
-| dataProviderSettings | array | Sets the settings for the chosen dataProvider |
-| disableRegister | boolean | false | Will set all the permissions for simleauth.command.register to false |
-| disableLogin | boolean | false | Will set all the permissions for simleauth.command.login to false |
-| allowLinking | boolean | false | Allow users to /link and /unlink accounts (update MySQL/SQLITE DB)|
-
-## Permissions
-
-| Permission | Default | Description |
-| :---: | :---: | :--- |
-| Register.chat | false | Allows using the chat while not being authenticated |
-| Register.move | false | Allows moving while not being authenticated |
-| Register.lastip | true | Allows authenticating using the lastIP when enabled in the config |
-| Register.command.register | true | Allows registering an account |
+Allows registering an account |
 | Register.command.login | true | Allows logging into an account |
 | Register.command.link | true | Allows linking an account |
 | Register.command.unlink | true | Allows unlinking an account |
 
-## For developers
 
 ### Events
 
