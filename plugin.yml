@@ -1,46 +1,46 @@
-name: SimpleAuth
-main: SimpleAuth\SimpleAuth
+name: Register
+main: Register\Register
 version: 2.1.3
 api: [3.0.0]
 load: STARTUP
 author: PocketMine Team
 authors: [shoghicp]
 description: Prevents people from impersonating an account, requires registration and login when connecting.
-website: https://github.com/PocketMine/SimpleAuth
+website: https://github.com/PocketMine/Register
 commands:
  login:
   description: "Logs into an account"
   usage: "/login <password>"
-  permission: simpleauth.command.login
+  permission: Register.command.login
  register:
   description: "Registers an account"
   usage: "/register <password>"
-  permission: simpleauth.command.register
+  permission: Register.command.register
  link:
   description: "Links an account"
   usage: "/link <other account><other password>"
-  permission: simpleauth.command.link
+  permission: Register.command.link
  unlink:
   description: "Unlinks linked accounts"
   usage: "/unlink"
-  permission: simpleauth.command.unlink
+  permission: Register.command.unlink
 
 permissions:
- simpleauth:
+ Register:
   default: op
-  description: "Allows using everything SimpleAuth has"
+  description: "Allows using everything Register has"
   children:
-   simpleauth.chat:
+   Register.chat:
     description: "Allows using the chat while not being authenticated"
     default: false
-   simpleauth.move:
+   Register.move:
     description: "Allows moving while not being authenticated"
     default: false
-   simpleauth.lastid:
+   Register.lastid:
     description: "Allows authenticating using the last id when enabled in the config"
     default: true
-   simpleauth.command:
-    description: "Allows using SimpleAuth commands"
+   Register.command:
+    description: "Allows using Register commands"
     default: true
     children:
      simpleauth.command.register:
