@@ -1,7 +1,7 @@
-# Default config for SimpleAuth plugin
+# Default config for Register plugin
 
 #Sets the data provider (yaml, sqlite3, mysql, none).
-#Only use none when there is another plugin that will integrate its dataProvider with SimpleAuth
+#Only use none when there is another plugin that will integrate its dataProvider with Register
 #Be aware that data is not automatically moved between data providers.
 dataProvider: yaml
 
@@ -37,6 +37,6 @@ disableLogin: false
 authenticateTimeout: 120
 
 #If enabled, will allow users to link and unlink accounts
-#Update MySQL with 'ALTER TABLE simpleauth.simpleauth_players ADD linkedign VARCHAR(16);'
-#Update SQLITE3 with 'ALTER TABLE simpleauth.simpleauth_players ADD linkedign TEXT;`
+#Update MySQL with 'ALTER TABLE Register.Register_players ADD linkedign VARCHAR(16);'
+#Update SQLITE3 with 'ALTER TABLE Register.Register_players ADD linkedign TEXT;`
 allowLinking: false
