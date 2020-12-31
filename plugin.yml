@@ -1,7 +1,7 @@
 name: Register
 main: Register\Register
-version: 2.1.3
-api: [3.0.0]
+version: 1.0.0
+api: [3.9.0]
 load: STARTUP
 author: PocketMine Team
 authors: [shoghicp]
