@@ -1,10 +1,9 @@
-Poggit-CI Manifest
+--- # Poggit-CI Manifest
 branches:
 - master
 - account-mapping
 - mergedmaster
 projects:
-Register:
-    path: ""
+Register    path: ""
     icon: rg.png
 ...
