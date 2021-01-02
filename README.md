@@ -1,26 +1,26 @@
-# Register
+# login
 
 By @Shoghicp
 
 
 #### IMPORTANT
-You no longer need to set "hack login" and "hack register" perms with SimpleAuthHelper.
+You no longer need to set "hack login" and "hack login" perms with SimpleAuthHelper.
 
 To use account linking you must also update the database if you use MySQL or SQLite:
 
 MySQL:
 
-* `ALTER TABLE Register.Register_players ADD linkedign VARCHAR(16);`
+* `ALTER TABLE login.login_players ADD linkedign VARCHAR(16);`
 
 SQLITE:
 
-* `ALTER TABLE Register.Register_players ADD linkedign TEXT;`
+* `ALTER TABLE login.login_players ADD linkedign TEXT;`
 
 
 Plugin for PocketMine-MP that prevents people from impersonating an account, requiring registration and login when connecting.
 
-	 Register plugin for PocketMine-MP
-     Copyright (C) 2014 PocketMine Team <https://github.com/PocketMine/Register>
+	 login plugin for PocketMine-MP
+     Copyright (C) 2014 PocketMine Team <https://github.com/PocketMine/login>
 
      This program is free software: you can redistribute it and/or modify
      it under the terms of the GNU Lesser General Public License as published by
@@ -35,50 +35,50 @@ Plugin for PocketMine-MP that prevents people from impersonating an account, req
 
 ## What's New?
 
-This version of Register adds automatic account linking to Register, and removes the obselete antihack protection.
+This version of login adds automatic account linking to login, and removes the obselete antihack protection.
 
-Register2 is compatible with SimpleAuthHelper, and works with these providers: MySQL, YAML and SQLITE
+login2 is compatible with SimpleAuthHelper, and works with these providers: MySQL, YAML and SQLITE
 
 ## Commands
 
 
 * `/login <password>`
-* `/register <password>`
-* `/unregister <password>` (TODO)
+* `/login <password>`
+* `/unlogin <password>` (TODO)
 * `/link <otherIGN> <otherpassword>`
 * `/unlink`
 * For Console: `/unlink <playerIGN>`
-* For OPs: `/Register <command: help|unregister> [parameters...]` (TODO)
+* For OPs: `/login <command: help|unlogin> [parameters...]` (TODO)
 
-Allows registering an account |
-| Register.command.login | true | Allows logging into an account |
-| Register.command.link | true | Allows linking an account |
-| Register.command.unlink | true | Allows unlinking an account |
+Allows logining an account |
+| login.command.login | true | Allows logging into an account |
+| login.command.link | true | Allows linking an account |
+| login.command.unlink | true | Allows unlinking an account |
 
 
 ### Events
 
-* Register\event\PlayerAuthenticateEvent
-* Register\event\PlayerDeauthenticateEvent
-* Register\event\PlayerRegisterEvent
-* Register\event\PlayerUnregisterEvent
+* login\event\PlayerAuthenticateEvent
+* login\event\PlayerDeauthenticateEvent
+* login\event\PlayerloginEvent
+* login\event\PlayerUnloginEvent
 
 ### Plugin API methods
 
 All methods are available through the main plugin object
 
 * bool isPlayerAuthenticated(pocketmine\Player $player)
-* bool isPlayerRegistered(pocketmine\IPlayer $player
+* bool isPlayerlogined(pocketmine\IPlayer $player
 * bool authenticatePlayer(pocketmine\Player $player)
 * bool deauthenticatePlayer(pocketmine\Player $player)
-* bool registerPlayer(pocketmine\IPlayer $player, $password)
-* bool unregisterPlayer(pocketmine\IPlayer $player)
-* void setDataProvider(Register\provider\DataProvider $provider)
-* Register\provider\DataProvider getDataProvider(void)
+* bool loginPlayer(pocketmine\IPlayer $player, $password)
+* bool unloginPlayer(pocketmine\IPlayer $player)
+* void setDataProvider(login\provider\DataProvider $provider)
+* login\provider\DataProvider getDataProvider(void)
 
 ### Implementing your own DataProvider
 
-You can register an instantiated object that implements Register\provider\DataProvider to the plugin using the _setDataProvider()_ method
+You can login an instantiated object that implements login\provider\DataProvider to the plugin using the _setDataProvider()_ method
 
 
     
