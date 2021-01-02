@@ -4,6 +4,7 @@ branches:
 - account-mapping
 - mergedmaster
 projects:
-Register    path: ""
+  login:
+    path: ""
     icon: rg.png
 ...
