@@ -1,57 +1,57 @@
-name: Register
-main: Register\Register
+name: login
+main: login\login
 version: 1.0.0
 api: [3.9.0]
 load: STARTUP
 author: PocketMine Team
 authors: [shoghicp]
 description: Prevents people from impersonating an account, requires registration and login when connecting.
-website: https://github.com/PocketMine/Register
+website: https://github.com/PocketMine/login
 commands:
  login:
   description: "Logs into an account"
   usage: "/login <password>"
-  permission: Register.command.login
- register:
-  description: "Registers an account"
-  usage: "/register <password>"
-  permission: Register.command.register
+  permission: login.command.login
+ login:
+  description: "logins an account"
+  usage: "/login <password>"
+  permission: login.command.login
  link:
   description: "Links an account"
   usage: "/link <other account><other password>"
-  permission: Register.command.link
+  permission: login.command.link
  unlink:
   description: "Unlinks linked accounts"
   usage: "/unlink"
-  permission: Register.command.unlink
+  permission: login.command.unlink
 
 permissions:
- Register:
+ login:
   default: op
-  description: "Allows using everything Register has"
+  description: "Allows using everything login has"
   children:
-   Register.chat:
+   login.chat:
     description: "Allows using the chat while not being authenticated"
     default: false
-   Register.move:
+   login.move:
     description: "Allows moving while not being authenticated"
     default: false
-   Register.lastid:
+   login.lastid:
     description: "Allows authenticating using the last id when enabled in the config"
     default: true
-   Register.command:
-    description: "Allows using Register commands"
+   login.command:
+    description: "Allows using login commands"
     default: true
     children:
-     Register.command.register:
-      description: "Allows registering an account"
+     login.command.login:
+      description: "Allows logining an account"
       default: true
-     Register.command.login:
+     login.command.login:
       description: "Allows logging into an account"
       default: true
-     Register.command.link:
+     login.command.link:
       description: "Allows linking to another account"
       default: true
-     Register.command.unlink:
+     login.command.unlink:
       description: "Allows unlinking an account"
       default: true
